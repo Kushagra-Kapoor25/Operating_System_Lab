@@ -30,6 +30,8 @@ void main()
     
     printf("Enter the number of processes: ");
     scanf("%d",&n);
+    printf("\n");
+    
     for(i = 0; i < n; i++)
 	{
     	printf("Enter arrival time of process %d :",i+1);
