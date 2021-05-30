@@ -72,3 +72,11 @@ void main()
     }
     printf("average waiting time=%f\naverage turn around time=%f",awt,atat);  //average waiting time and turn around time
 }
+
+/*
+AT - Arrival Time of the process
+BT - Burst time of the process
+CT - Completion time of the process
+TAT - Turnaround time of the process
+WT - Waiting time of the process
+*/

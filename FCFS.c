@@ -62,7 +62,7 @@ void sort(int p[], int bt[], int at[],int nop)
 		}
 	}
 }
-int main()
+void main()
 {
 	int processes[] = {1,2,3,4,5};
 	const int n = (sizeof(processes)/sizeof(int));
@@ -71,6 +71,19 @@ int main()
 	
 	sort(processes,burst_time,arrival_time,n);
 	fcfsDetails(processes,burst_time,arrival_time,n);
-	return 0;
 }
+
+/*
+AT - Arrival Time of the process
+BT - Burst time of the process
+CT - Completion time of the process
+TAT - Turnaround time of the process
+WT - Waiting time of the process
+
+
+Formulas used:
+--------------
+TAT = BT + WT
+WT = TAT - BT
+*/
 
