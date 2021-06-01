@@ -24,7 +24,6 @@ void main()
     int is_completed[20];
     int current_time = 0;
     int completed = 0;
-    int prev = 0;
     int i,j;
     memset(is_completed,0,sizeof(is_completed));
     
@@ -73,7 +72,6 @@ void main()
 		{
             burst_remaining[idx] -= 1;
             current_time++;
-            prev = current_time;
             if(burst_remaining[idx] == 0) 
 			{
                 p[idx].completion_time = current_time;
