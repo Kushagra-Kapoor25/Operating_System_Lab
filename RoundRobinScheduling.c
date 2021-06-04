@@ -25,6 +25,7 @@ int main()
  
       printf("Enter Time Quantum:");
       scanf("%d", &time_quantum);
+      
       for(current_time = 0, i = 0; completed != 0;)
       {
             if(burst_remaining[i] <= time_quantum && burst_remaining[i] > 0)
@@ -55,6 +56,10 @@ int main()
             {
                   i++;
             }
+            else
+            {
+            	i++;
+			}
       }
 	  printf("PID\t\tBT\t\tAT\t\tTAT\t\tWT\n");
       printf("----------------------------------------------------------------------------\n");
