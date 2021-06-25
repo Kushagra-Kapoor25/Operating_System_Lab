@@ -62,6 +62,8 @@ void main()
         case 3:
             flag = 0;
             break;
+        default:
+        	break;
         }
     }
 }
