@@ -8,7 +8,7 @@ int i ;
 int n ;
 printf("Enter the term till which you want fibonacci series to be generated: ");
 scanf("%d",&n);
-for(i = 2;i <= n;i ++)
+for(i = 2 ; i <= n ; i ++)
 {
 	c = a + b;
 	a = b;

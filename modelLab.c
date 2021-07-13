@@ -1,23 +1,29 @@
 #include<stdio.h>
 #include<string.h>
 
+// Counter variables
 int kw = 0;
 int op = 0;
 int sp = 0;
 int id = 0;
 
+// Array of literals
 char* keyword[] = {"if","else","while","do","void","continue","int","double","float","char"};
 char oper[] = {'!','%','&','*','+','/','-','=','<','>'};
 char seper[] = {'(',')','{','}','[',']',',',';','.'};
 
+
+// Size of literal arrays
 const static int ls = sizeof(seper)/sizeof(seper[0]);
 const static int lo = sizeof(oper)/sizeof(oper[0]);
 const static int lkw = sizeof(keyword)/sizeof(keyword[0]);
 
+// Hash set to maintain the count of each literal
 int spi[sizeof(seper)/sizeof(seper[0])] = {0};
 int opi[sizeof(oper)/sizeof(oper[0])] = {0};
 int kwi[sizeof(keyword)/sizeof(keyword[0])] = {0};
 
+// Checks if the word contains seperators
 void isSeperator(char* w)
 {
 	int i;
@@ -35,6 +41,7 @@ void isSeperator(char* w)
 	}
 }
 
+// Checks if the word contains operators
 void isOperator(char* w)
 {
 	int i;
@@ -53,6 +60,7 @@ void isOperator(char* w)
 	}
 }
 
+// Checks if the word contains keywords
 void isKeyword(char* w)
 {
 	int i;
@@ -66,6 +74,7 @@ void isKeyword(char* w)
 	}
 }
 
+// Checks if the word is am identifier
 void isIdentifier(char *w)
 {
 	int i;
@@ -84,6 +93,7 @@ void isIdentifier(char *w)
 	}
 }
 
+// Passes the extracted token to the respective functions
 void checkToken(char* word)
 {
 	isSeperator(word);
@@ -92,6 +102,7 @@ void checkToken(char* word)
 	isIdentifier(word);
 }
 
+// Prints the final table
 void printDetails()
 {
 		int i;
@@ -119,13 +130,14 @@ void printDetails()
 		}
 		printf("Number of seperators: %d\n\n",sp);
 		
-		printf("Number of identifiers: %d\n\n",id);
+		printf("Number of identifiers: %d\n\n",id - (sp + op + kw));
 		
 }
 
 void main()
 {
-	FILE *fp = fopen("myfile.c","r");
+	// File pointer
+	FILE *fp = fopen("fibonacci.c","r");
 	if(fp == NULL)
 		printf("Cannot find the file.\n");
 	else
